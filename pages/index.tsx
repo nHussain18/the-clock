@@ -11,8 +11,9 @@ const Home = () => {
       setDate(new Date())
     }, 1000)
   }, [])
+
   const onMouseMove = (event: any) => {
-    const card: any = document.getElementById('clock')
+    const card: HTMLDivElement | any = document.getElementById('clock')
     var ax = -(window.innerWidth / 2 - event?.pageX) / 20;
     var ay = (window.innerHeight / 2 - event?.pageY) / 10;
     ax = ax / 1.7;
@@ -38,9 +39,9 @@ const Home = () => {
         <div id='clock' className="card">
           <div className="card-content">
             <div className='center' />
-            <span className='niddle-hour' style={{ backgroundColor: 'red', transform: `rotate(${((hour / 12) * 360) + ((mins / 60) * 30) + 90}deg)` }} />
-            <span className='niddle-minute' style={{ backgroundColor: 'red', transform: `rotate(${((mins / 60) * 360) + ((seconds / 60) * 6) + 90}deg)` }} />
-            <span className='niddle-second' style={{ backgroundColor: 'red', transform: `rotate(${((mins * 360) + (seconds / 60) * 360) + 90}deg)` }} />
+            <span className='niddle-hour' style={{ transform: `rotate(${((hour / 12) * 360) + ((mins / 60) * 30) + 90}deg)` }} />
+            <span className='niddle-minute' style={{ transform: `rotate(${((mins / 60) * 360) + ((seconds / 60) * 6) + 90}deg)` }} />
+            <span className='niddle-second' style={{ transform: `rotate(${((mins * 360) + (seconds / 60) * 360) + 90}deg)` }} />
           </div>
         </div>
         <div className='contact'>
