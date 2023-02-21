@@ -7,9 +7,9 @@ const Home = () => {
 
   useEffect(() => {
     document.addEventListener('mousemove', onMouseMove)
-    setInterval(() => {
-      setDate(new Date())
-    }, 1000)
+    // setInterval(() => {
+    //   setDate(new Date())
+    // }, 1000)
   }, [])
 
   const onMouseMove = (event: any) => {
@@ -24,12 +24,12 @@ const Home = () => {
 
   let seconds = date.getSeconds();
   let mins = date.getMinutes();
-  let hour = date.getHours();
-  console.log("time", hour, mins, seconds);
+  let hours = date.getHours();
+  console.log("time", hours, mins, seconds);
 
-  let hDeg = ((hour / 12) * 360) + ((mins / 60) * 30) + 90
-  let mDeg = ((mins / 60) * 360) + ((seconds / 60) * 6) + 90
-  let sDeg = ((mins * 360) + (seconds / 60) * 360) + 90
+  let hDeg = (((hours % 12) * 30) + (mins / 2) + 90) % 360;
+  let mDeg = ((mins * 6) + (seconds * 0.1) + 90) % 360
+  let sDeg = (seconds * 6) + 90
   console.log("Degrees", hDeg, mDeg, sDeg);
 
   return (
