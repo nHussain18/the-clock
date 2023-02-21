@@ -39,7 +39,7 @@ const Home = () => {
   // let hour = date.getHours();
   console.log("time", hour, min, sec);
 
-  let hDeg = (hour * 30) + (min / 2) + Math.round(0.008 * sec) + 90
+  let hDeg = (hour * 30) + (min / 2) + (0.008 * sec) + 90
   let mDeg = (min * 6) + (sec * 0.1) + 90
   let sDeg = (sec * 6) + 90
   // let hDeg = Math.round((((hour % 12) * 30) + (min / 2) + (0.008 * sec) + 90) % 360);
