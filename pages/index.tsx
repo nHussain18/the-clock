@@ -28,7 +28,7 @@ const Home = () => {
   console.log("time", hours, mins, seconds);
 
   let hDeg = (((hours % 12) * 30) + (mins / 2) + 90) % 360;
-  let mDeg = ((mins * 6) + (seconds * 0.1) + 90) % 360
+  let mDeg = Math.round(((mins * 6) + (seconds * 0.1) + 90) % 360)
   let sDeg = (seconds * 6) + 90
   console.log("Degrees", hDeg, mDeg, sDeg);
 
