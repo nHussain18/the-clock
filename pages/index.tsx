@@ -27,6 +27,11 @@ const Home = () => {
   let hour = date.getHours();
   console.log("time", hour, mins, seconds);
 
+  let hDeg = ((hour / 12) * 360) + ((mins / 60) * 30) + 90
+  let mDeg = ((mins / 60) * 360) + ((seconds / 60) * 6) + 90
+  let sDeg = ((mins * 360) + (seconds / 60) * 360) + 90
+  console.log("Degrees", hDeg, mDeg, sDeg);
+
   return (
     <>
       <Head>
@@ -40,9 +45,9 @@ const Home = () => {
         <div id='clock' className="card">
           <div className="card-content">
             <div className='center' />
-            <span className='niddle-hour' style={{ transform: `rotate(${((hour / 12) * 360) + ((mins / 60) * 30) + 90}deg)` }} />
-            <span className='niddle-minute' style={{ transform: `rotate(${((mins / 60) * 360) + ((seconds / 60) * 6) + 90}deg)` }} />
-            <span className='niddle-second' style={{ transform: `rotate(${((mins * 360) + (seconds / 60) * 360) + 90}deg)` }} />
+            <span className='niddle-hour' style={{ transform: `rotate(${hDeg}deg)` }} />
+            <span className='niddle-minute' style={{ transform: `rotate(${mDeg}deg)` }} />
+            <span className='niddle-second' style={{ transform: `rotate(${sDeg}deg)` }} />
           </div>
         </div>
         <div className='contact'>
