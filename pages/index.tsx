@@ -3,14 +3,24 @@ import { useEffect, useState } from 'react'
 
 const Home = () => {
 
-  const [date, setDate] = useState(new Date())
+  const [state, setState] = useState({
+    hour: new Date().getHours(),
+    min: new Date().getMinutes(),
+    sec: new Date().getSeconds()
+  })
 
   useEffect(() => {
     document.addEventListener('mousemove', onMouseMove)
     setInterval(() => {
-      setDate(new Date())
+      setState({
+        hour: new Date().getHours(),
+        min: new Date().getMinutes(),
+        sec: new Date().getSeconds()
+      })
     }, 1000)
   }, [])
+
+  const { hour, min, sec } = state;
 
   const onMouseMove = (event: any) => {
     const card: HTMLDivElement | any = document.getElementById('clock')
@@ -22,14 +32,17 @@ const Home = () => {
     card.setAttribute("style", `transform: rotateY(${ax}deg) rotateX(${ay}deg);-webkit-transform: rotateY(${ax}deg) rotateX(${ay}deg);-moz-transform: rotateY(${ax}deg) rotateX(${ax}deg)`);
   };
 
-  let seconds = date.getSeconds();
-  let mins = date.getMinutes();
-  let hours = date.getHours();
-  console.log("time", hours, mins, seconds);
+  // let sec = date.getSeconds();
+  // let min = date.getMinutes();
+  // let hour = date.getHours();
+  console.log("time", hour, min, sec);
 
-  let hDeg = Math.round((((hours % 12) * 30) + (mins / 2) + (0.008 * seconds) + 90) % 360);
-  let mDeg = Math.round(((mins * 6) + (seconds * 0.1) + 90) % 360)
-  let sDeg = (seconds * 6) + 90
+  let hDeg = (hour * 30) + (min / 2) + 90
+  let mDeg = (min * 6) + (sec * 0.1) + 90
+  let sDeg = (sec * 6) + 90
+  // let hDeg = Math.round((((hour % 12) * 30) + (min / 2) + (0.008 * sec) + 90) % 360);
+  // let mDeg = Math.round(((min * 6) + (sec * 0.1) + 90) % 360)
+  // let sDeg = (sec * 6) + 90
   console.log("Degrees", hDeg, mDeg, sDeg);
 
   return (
@@ -64,7 +77,7 @@ const Home = () => {
             <span><a href="https://github.com/nHussain18/the-clock">Github</a></span>
           </div>
           <div>
-            <span>11</span>
+            <span>12</span>
           </div>
         </div>
       </div>
