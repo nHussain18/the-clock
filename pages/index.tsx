@@ -22,9 +22,9 @@ const Home = () => {
     card.setAttribute("style", `transform: rotateY(${ax}deg) rotateX(${ay}deg);-webkit-transform: rotateY(${ax}deg) rotateX(${ay}deg);-moz-transform: rotateY(${ax}deg) rotateX(${ax}deg)`);
   };
 
-  const seconds = date.getSeconds();
-  const mins = date.getMinutes();
-  const hour = date.getHours();
+  let seconds = date.getSeconds();
+  let mins = date.getMinutes();
+  let hour = date.getHours();
 
   return (
     <>
