@@ -7,9 +7,9 @@ const Home = () => {
 
   useEffect(() => {
     document.addEventListener('mousemove', onMouseMove)
-    // setInterval(() => {
-    //   setDate(new Date())
-    // }, 1000)
+    setInterval(() => {
+      setDate(new Date())
+    }, 1000)
   }, [])
 
   const onMouseMove = (event: any) => {
@@ -27,7 +27,7 @@ const Home = () => {
   let hours = date.getHours();
   console.log("time", hours, mins, seconds);
 
-  let hDeg = (((hours % 12) * 30) + (mins / 2) + 90) % 360;
+  let hDeg = Math.round((((hours % 12) * 30) + (mins / 2) + (0.008 * seconds) + 90) % 360);
   let mDeg = Math.round(((mins * 6) + (seconds * 0.1) + 90) % 360)
   let sDeg = (seconds * 6) + 90
   console.log("Degrees", hDeg, mDeg, sDeg);
@@ -62,6 +62,9 @@ const Home = () => {
           <div>
             <span>Go to Repo&nbsp;</span>
             <span><a href="https://github.com/nHussain18/the-clock">Github</a></span>
+          </div>
+          <div>
+            <span>11</span>
           </div>
         </div>
       </div>

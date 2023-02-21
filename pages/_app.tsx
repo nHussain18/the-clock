@@ -4,8 +4,8 @@ import React from 'react'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <React.StrictMode>
+    // <React.StrictMode>
       <Component {...pageProps} />
-    </React.StrictMode>
+    // </React.StrictMode>
   )
 }
