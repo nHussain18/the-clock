@@ -6,7 +6,8 @@ const Home = () => {
   const [state, setState] = useState({
     hour: new Date().getHours(),
     min: new Date().getMinutes(),
-    sec: new Date().getSeconds()
+    sec: new Date().getSeconds(),
+    isLoading: true
   })
 
   useEffect(() => {
@@ -15,12 +16,13 @@ const Home = () => {
       setState({
         hour: new Date().getHours(),
         min: new Date().getMinutes(),
-        sec: new Date().getSeconds()
+        sec: new Date().getSeconds(),
+        isLoading: false
       })
     }, 1000)
   }, [])
 
-  const { hour, min, sec } = state;
+  const { hour, min, sec, isLoading } = state;
 
   const onMouseMove = (event: any) => {
     const card: HTMLDivElement | any = document.getElementById('clock')
@@ -47,12 +49,15 @@ const Home = () => {
 
       <div className='container'>
         <div id='clock' className="card">
-          <div className="card-content">
-            <div className='center' />
-            <span className='niddle-hour' style={{ transform: `rotate(${hDeg}deg)` }} />
-            <span className='niddle-minute' style={{ transform: `rotate(${mDeg}deg)` }} />
-            <span className='niddle-second' style={{ transform: `rotate(${sDeg}deg)` }} />
-          </div>
+          {isLoading ?
+            <div className='loader' />
+            : <div className="card-content">
+              <div className='center' />
+              <span className='niddle-hour' style={{ transform: `rotate(${hDeg}deg)` }} />
+              <span className='niddle-minute' style={{ transform: `rotate(${mDeg}deg)` }} />
+              <span className='niddle-second' style={{ transform: `rotate(${sDeg}deg)` }} />
+            </div>
+          }
         </div>
         <div className='contact'>
           <div>

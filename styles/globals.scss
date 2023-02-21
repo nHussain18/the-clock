@@ -113,6 +113,17 @@ body {
     }
   }
 
+  .loader {
+    position: absolute;
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    transform-style: preserve-3d;
+    background: #000;
+    animation-duration: 1.4s;
+    animation-name: loader1;
+  }
+
   @keyframes loader1 {
     from {
       height: 10px;
