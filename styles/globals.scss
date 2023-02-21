@@ -89,9 +89,7 @@ body {
       transform-origin: 100%;
       border-radius: 3px;
       background-color: #f00;
-      transition: all 1s ease;
-      transition-timing-function: linear;
-      // transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+      transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
     }
 
     .center {
@@ -99,7 +97,6 @@ body {
       width: 20px;
       transform-origin: 90%;
       background: #f00;
-      // border:3px solid red;
       border-radius: 50%;
     }
 

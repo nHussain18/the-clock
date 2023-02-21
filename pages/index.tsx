@@ -11,15 +11,13 @@ const Home = () => {
 
   useEffect(() => {
     document.addEventListener('mousemove', onMouseMove)
-    const id = setInterval(() => {
+    setInterval(() => {
       setState({
         hour: new Date().getHours(),
         min: new Date().getMinutes(),
         sec: new Date().getSeconds()
       })
-      console.log("INTERNAL")
     }, 1000)
-    console.log("INTERvalID: ", id);
   }, [])
 
   const { hour, min, sec } = state;
@@ -34,18 +32,9 @@ const Home = () => {
     card.setAttribute("style", `transform: rotateY(${ax}deg) rotateX(${ay}deg);-webkit-transform: rotateY(${ax}deg) rotateX(${ay}deg);-moz-transform: rotateY(${ax}deg) rotateX(${ax}deg)`);
   };
 
-  // let sec = date.getSeconds();
-  // let min = date.getMinutes();
-  // let hour = date.getHours();
-  console.log("time", hour, min, sec);
-
-  let hDeg = (hour * 30) + (min / 2) + (0.008 * sec) + 90
+  let hDeg = (hour * 30) + (min / 2) + 90 + Math.random()
   let mDeg = (min * 6) + (sec * 0.1) + 90
   let sDeg = (sec * 6) + 90
-  // let hDeg = Math.round((((hour % 12) * 30) + (min / 2) + (0.008 * sec) + 90) % 360);
-  // let mDeg = Math.round(((min * 6) + (sec * 0.1) + 90) % 360)
-  // let sDeg = (sec * 6) + 90
-  console.log("Degrees", hDeg, mDeg, sDeg);
 
   return (
     <>
@@ -61,8 +50,6 @@ const Home = () => {
           <div className="card-content">
             <div className='center' />
             <span className='niddle-hour' style={{ transform: `rotate(${hDeg}deg)` }} />
-            <span className='niddle-hour' style={{ transform: `rotate(${mDeg}deg)`, backgroundColor: 'blue' }} />
-            <span className='niddle-minute' style={{ transform: `rotate(${hDeg}deg)`, backgroundColor: 'yellow' }} />
             <span className='niddle-minute' style={{ transform: `rotate(${mDeg}deg)` }} />
             <span className='niddle-second' style={{ transform: `rotate(${sDeg}deg)` }} />
           </div>
@@ -79,9 +66,6 @@ const Home = () => {
           <div>
             <span>Go to Repo&nbsp;</span>
             <span><a href="https://github.com/nHussain18/the-clock">Github</a></span>
-          </div>
-          <div>
-            <span>12</span>
           </div>
         </div>
       </div>
