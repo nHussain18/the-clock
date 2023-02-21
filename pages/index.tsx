@@ -25,6 +25,7 @@ const Home = () => {
   let seconds = date.getSeconds();
   let mins = date.getMinutes();
   let hour = date.getHours();
+  console.log("time", hour, mins, seconds);
 
   return (
     <>
