@@ -11,8 +11,8 @@ const Home = () => {
       setDate(new Date())
     }, 1000)
   }, [])
-  const onMouseMove = (event: Event) => {
-    const card: Element = document.getElementById('clock')
+  const onMouseMove = (event: any) => {
+    const card: any = document.getElementById('clock')
     var ax = -(window.innerWidth / 2 - event?.pageX) / 20;
     var ay = (window.innerHeight / 2 - event?.pageY) / 10;
     ax = ax / 1.7;
