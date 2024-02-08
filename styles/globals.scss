@@ -111,6 +111,60 @@ body {
         transform: translateZ(80px);
       }
     }
+
+    .hour{
+      position: absolute;
+      font-size: 20px;
+      height:20px;
+      width:20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hour-1{
+      right:71px;
+      top:18px;
+    }
+    .hour-2{
+      right:18px;
+      top:71px;
+    }
+    .hour-3{
+      right:0
+    }
+    .hour-4{
+      right:19px;
+      bottom:72px;
+    }
+    .hour-5{
+      right:72px;
+      bottom:21px;
+    }
+    .hour-6{
+      bottom:0
+    }
+    .hour-7{
+      left:72px;
+      bottom:21px;
+    }
+    .hour-8{
+      left:19px;
+      bottom:72px;
+    }
+    .hour-9{
+      left:0
+    }
+    .hour-10{
+      left:20px;
+      top:71px;
+    }
+    .hour-11{
+      left:71px;
+      top:18px;
+    }
+    .hour-12{
+      top:0
+    }
   }
 
   .loader {
@@ -147,12 +201,14 @@ body {
   @media (prefers-color-scheme: light) {
     .card-content {
       background: #FFF;
+      color: #000;
     }
   }
-
+  
   @media (prefers-color-scheme: dark) {
     .card-content {
       background: #000;
+      color: #fff;
     }
   }
 }
