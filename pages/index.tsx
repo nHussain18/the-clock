@@ -56,6 +56,19 @@ const Home = () => {
               <span className='niddle-hour' style={{ transform: `rotate(${hDeg}deg)` }} />
               <span className='niddle-minute' style={{ transform: `rotate(${mDeg}deg)` }} />
               <span className='niddle-second' style={{ transform: `rotate(${sDeg}deg)` }} />
+
+              <span className='hour hour-1' >1</span>
+              <span className='hour hour-2' >2</span>
+              <span className='hour hour-3' >3</span>
+              <span className='hour hour-4' >4</span>
+              <span className='hour hour-5' >5</span>
+              <span className='hour hour-6' >6</span>
+              <span className='hour hour-7' >7</span>
+              <span className='hour hour-8' >8</span>
+              <span className='hour hour-9' >9</span>
+              <span className='hour hour-10' >10</span>
+              <span className='hour hour-11' >11</span>
+              <span className='hour hour-12' >12</span>
             </div>
           }
         </div>
