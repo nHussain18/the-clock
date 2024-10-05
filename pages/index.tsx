@@ -1,5 +1,18 @@
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+
+const firebaseConfig = {
+  apiKey: process.env.NEXT_PUBLIC_FirebaseApiKey,
+  authDomain: process.env.NEXT_PUBLIC_FirebaseAuthDomain,
+  projectId: process.env.NEXT_PUBLIC_FirebaseProjectId,
+  storageBucket: process.env.NEXT_PUBLIC_FirebaseStorageBucket,
+  messagingSenderId: process.env.NEXT_PUBLIC_FirebaseMessagingSenderId,
+  appId: process.env.NEXT_PUBLIC_FirebaseAppId,
+  measurementId: process.env.NEXT_PUBLIC_FirebaseMeasurementId,
+};
+console.log("firebaseConfig", firebaseConfig);
 
 const Home = () => {
 
@@ -11,6 +24,9 @@ const Home = () => {
   })
 
   useEffect(() => {
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    
     document.addEventListener('mousemove', onMouseMove)
     setInterval(() => {
       setState({
