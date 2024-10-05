@@ -12,7 +12,6 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FirebaseAppId,
   measurementId: process.env.NEXT_PUBLIC_FirebaseMeasurementId,
 };
-console.log("firebaseConfig1", firebaseConfig);
 
 const Home = () => {
 
